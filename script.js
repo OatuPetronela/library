@@ -8,7 +8,6 @@ class Book {
         this.pages = pages;
     }
 }
-
 let books = [];
 let btn = document.getElementById("btn");
 let element = document.getElementById("book-list");
@@ -72,10 +71,21 @@ function submitForm(event) {
     let src = document.getElementById("src").value;
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
-    console.log(title, src, author, pages)
     let book = new Book(title, src, author, pages)
     books.push(book)
     addElement(book)
 }
 btn.addEventListener("click", submitForm)
 
+
+btn.addEventListener("click", function removeFields(event){
+    event.preventDefault();
+    let title = document.getElementById("title");
+    let src = document.getElementById("src");
+    let author = document.getElementById("author");
+    let pages = document.getElementById("pages");
+    title.value= "";
+    src.value="";
+    author.value= "";
+    pages.value= "";
+})
