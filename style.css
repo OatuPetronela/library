@@ -79,3 +79,7 @@ font-size: 25px !important;
 font-size: 21px;
 
 }
+.card-img-top{
+    max-width: 35em !important;
+    height: 27em   !important;
+}
