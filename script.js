@@ -9,7 +9,7 @@ let row = document.createElement("row");
 row.className = "row";
 let id = 0;
 
-if(books != null){
+if (books != null) {
     books.forEach(book => {
         addElement(book);
     });
@@ -22,6 +22,7 @@ class Book {
         this.pages = pages;
     }
 }
+
 function addElement(book) {
     let cardId = "card-" + id;
     let col = document.createElement("col")
@@ -34,19 +35,19 @@ function addElement(book) {
     img.src = book.src;
     let cardBody = document.createElement("div")
     cardBody.className = "card-body"
-    let elementTitle = document.createElement("h1");
+    let elementTitle = document.createElement("h2");
     elementTitle.className = "card-title text-center"
     elementTitle.innerHTML = book.title;
     let hr = document.createElement("hr")
-    let elementAuthor = document.createElement("h3");
-    elementAuthor.className = "card-text"
+    let elementAuthor = document.createElement("h4");
+    elementAuthor.className = "card-text text-center"
     elementAuthor.innerHTML = "Author: " + book.author;
-    let elementPages = document.createElement("h3");
-    elementPages.className = "card-text "
+    let elementPages = document.createElement("h4");
+    elementPages.className = "card-text text-center "
     elementPages.innerHTML = "Pages: " + book.pages;
     let buttonRemove = document.createElement("button")
     buttonRemove.className = "btn btn-danger";
-    buttonRemove.onclick = function () { btnRemove(cardId) };
+    buttonRemove.onclick = function() { btnRemove(cardId) };
     buttonRemove.innerHTML = "Remove";
 
     row.appendChild(col);
@@ -103,4 +104,3 @@ function btnRemove(cardId) {
     let card = document.getElementById(cardId);
     card.remove();
 }
-
